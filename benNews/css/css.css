@@ -1,0 +1,21 @@
+body{
+	max-width: 1024px;
+	margin: auto;
+}
+
+body > div, .index-title{
+	padding: 0 10px;
+}
+
+.detail_text dd{
+	font-size: 14px;
+	text-align: center;
+}
+
+.detail_text dt img {
+    max-width: 538px;
+}
+
+.item{
+	margin: 8px 0;
+}
