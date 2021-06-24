@@ -4,98 +4,122 @@
     <meta charset="utf-8">
     <title>Ben Chiu Apple Daily</title>
     <link rel="stylesheet" href="benNews/css/css.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      var newsData = {
+        "專訪":[
+          {"title":"Ben《造星》奪冠不忘初衷","thumbnail":"t_1bc58dbea2e74a57ba3f1552715f830c_name_Untitled_1_copy.jpg","video":true},
+          {"title":"造星Ben拒認「裙腳」靠努力搣甩壞標籤 用8個月練折骨絕招嚇親家姐","thumbnail":"t_1bc58dbea2e74a57ba3f1552715f830c_name_Untitled_1_copy.jpg","video":true},
+          {"title":"《全民造星3》香港「折骨舞王」Ben  由冇自信到成為冠軍改變我遇困難唔再逃避","thumbnail":"1609160146_291d.jpg","video":true}
+        ],
+        "舞台劇":[
+          {"title":"【娛樂人物】Ben參演香港災難系列Part 2　梁祖堯喪屍腦交戰","thumbnail":"leung1.jpg","video":true},
+          {"title":"志同道合邀演出","thumbnail":"PKQKHMXAXZBFLCAEPHOTBS3YXM.jpg","video":false},
+          {"title":"A組「媽媽」梁祖堯搵《造星III》Ben演舞台劇 三十強前已傾合作","thumbnail":"B62HJHJ22VACFK5YBRDMIMV57I.jpg","video":false},
+          {"title":"舞台劇《通菜街喪屍戰》光速售罄 梁祖堯睇中Ben努力：正常行路都係練返嚟","thumbnail":"IMZ6OUFVLFA6RG6PDAHL7BEEGY.jpg","video":false},
+          {"title":"梁祖堯預見「香港災難」 有思想冇真我：比喪屍更喪屍","thumbnail":"leung1.jpg","video":true}
+        ],
+        "全民造星III":[
+          {"title":"折骨舞王Ben《全民造星III》封王 大熱陳葦璇與ANSONBEAN同分屈居亞、季軍","thumbnail":"t_7d4d31d4b9be4b3c89e4b3d1ed2c28aa_name_32544a66_9e5c_4917_8b1d_88d0ae0d203c.jpg","video":true},
+          {"title":"靠觀眾投票勝出　大熱Cloud三甲冇份　Ben爆冷奪《造星III》冠軍","thumbnail":"t_7d4d31d4b9be4b3c89e4b3d1ed2c28aa_name_32544a66_9e5c_4917_8b1d_88d0ae0d203c.jpg","video":true},
+          {"title":"造星III總決賽丨ANSONBEAN被Ben傳染儍氣收埋記者錄音筆 陳葦璇大家姐照顧後輩","thumbnail":"t_9ab5a95e66d844418049ee4bb16dec7d_name_Untitled_1_copy.jpg","video":true},
+          {"title":"《全民造星3》冠軍折骨舞Ben是富家子 萬梓良世姪 住獨立屋有司機 畫家家姐曾選港姐","thumbnail":"1609067721_bc93.png","video":true},
+          {"title":"狗仔出更丨出爐《造星III》冠軍Ben住獨立屋 季軍ANSONBEAN居九肚山豪宅","thumbnail":"t_c72aad9a1b01477c8821e2d407e02ec5_name_T4LOB4XA65A3TPZIBQSJJRAU5E.jpg","video":true},
+          {"title":"全民造星III丨ANSONBEAN 凌空接咪後再練新絕招 Mischa、陳葦璇苦練頑抗電眼","thumbnail":"anson10.jpg","video":true},
+          {"title":"全民造星III丨十強互選冠軍阿Ben做「友誼先生」 Kimman坐亞甘願受折磨","thumbnail":"WMYVR5QX7JBXLHSK5ZPB4GMK5Y.jpg","video":false},
+          {"title":"ANSONBEAN減壓爭冠軍","thumbnail":"anson2.jpg","video":true}
+        ],
+        "造星後":[
+          {"title":"造星冠軍丨「軟骨Ben」趙祥誠拍廣告記錄舞者辛酸 被嘲耍雜技最難聽","thumbnail":"D52FFLTXQ5FSJPEU3UELD23OVI.jpg","video":false},
+          {"title":"Ben嬲爆練舞被嘲似雜耍","thumbnail":"TVL2JMJHTZDERLLA7T72JCL6QY.jpg","video":false},
+          {"title":"Ben Sir唔明《造星III》點解紅咗姜濤 折骨Ben：畀啲時間我","thumbnail":"EF3OS3L5LRAORNCGVPPG7RQLYY.jpg","video":false},
+          {"title":"Ben Sir唔明點解紅咗姜B 折骨Ben：姜濤講我哋會成為亞洲第一，我信我係其中一個","thumbnail":"1620022907_72b4.jpg","video":false}
+        ],
+        "林二汶演唱會":[
+          {"title":"林二汶拖姜濤唱歌好得戚 組仔Ben折骨舞帶動氣氛","thumbnail":"t_783cebac71554351af132b11f38f198c_name_Untitled_3_copy_____.jpg","video":true},
+          {"title":"林二汶黑裙Look踏上紅館舞台 獻唱《再聚》悼故友盧凱彤","thumbnail":"LVZI252RE5FHPNBSOFSPNACAAM.jpg","video":false},
+          {"title":"紅館尾場騷感謝明哥賞識 林二汶憶盧凱彤爆喊　「依然喺我隔籬」","thumbnail":"FA4GVCUWMZETPMI2BIRCIIWTAY.jpg","video":false}
+        ],
+        "ViuTV 五周年台慶":[
+          {"title":"ViuTV五周年台慶丨杜琪峯講錯「Miller」 睇MIRROR演出大讚：香港創意工業有希望","thumbnail":"t_7413ae1e2e374eddad9df9a4879b18a3_name_e55467953pg.jpg","video":true},
+          {"title":"ViuTV五周年台慶大晒冷　MIRROR獲杜琪峯激讚　𢱑拍黑社會喜劇","thumbnail":"65DPZAMIC5BKHPAT3B4DHAGVMU.jpg","video":true},
+          {"title":"Alina透視舞衣洩春光","thumbnail":"YQA4DFLSSRE3DC4JE67VP5VEPI.jpg","video":false}
+        ],
+        "慈善畫展":[
+          {"title":"李佳芯恨同伴侶鴛鴦學書法 怨拍拖唔浪漫從冇共同興趣","thumbnail":"H6RXWZVLUBBWJORVAS2UVQ7KEA.jpg","video":false}
+        ],
+        "囝囝女女730":[
+          {"title":"ViuTV食住《造星III》餘威推出《囝囝女女730》 硬撼大台《東張西望》","thumbnail":"t_c56ea04aec824926aafdca745907a33b_name_WhatsApp_Image_2021_01_16_at_16_01_44.jpeg","video":true},
+          {"title":"囝囝女女730丨Ben怕醜尷尬dead air 陳葦璇打圓場解圍","thumbnail":"Z4XTJCQG7ZD77DMYI3XGNVJ4CE.jpg","video":false}
+        ],
+        "家姐":[
+          {"title":"城市畫家留住消逝輪廓「剛開始認識便已逐步消失」","thumbnail":"T5FTJBSL3RHR3G52DN2CF4QX3E.jpg","video":false}
+        ]
+      };
+      console.log(newsData);
+      console.log(newsData["專訪"]);
+
+      $(document).ready(function(){
+        newsData["專訪"].forEach(el => {
+          $("#interview").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img"><img src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
+        });
+        newsData["舞台劇"].forEach(el => {
+          $("#stage").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img"><img src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
+        });
+        newsData["造星後"].forEach(el => {
+          $("#after-kingmarker").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img"><img src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
+        });
+        newsData["全民造星III"].forEach(el => {
+          $("#kingmarker").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img"><img src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
+        });
+        newsData["囝囝女女730"].forEach(el => {
+          $("#youngster-show").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img"><img src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
+        });
+        newsData["林二汶演唱會"].forEach(el => {
+          $("#lam2").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img"><img src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
+        });
+        newsData["慈善畫展"].forEach(el => {
+          $("#exhibition").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img"><img src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
+        });
+        newsData["家姐"].forEach(el => {
+          $("#sister").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img"><img src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
+        });
+      });
+    </script>
   </head>
   <body>
     <h1 class="index-title">Ben Chiu 趙祥誠</h1>
-    <div class="item">
-      <a href="benNews/Ben《造星》奪冠不忘初衷.html">Ben《造星》奪冠不忘初衷</a>
+    <div>
+      <h2>專訪</h2>
+      <div id="interview" class="news-wrap"></div>
     </div>
-    <div class="item">
-      <a href="benNews/造星Ben拒認「裙腳」靠努力搣甩壞標籤 用8個月練折骨絕招嚇親家姐.html">造星Ben拒認「裙腳」靠努力搣甩壞標籤 用8個月練折骨絕招嚇親家姐</a>
+    <div>
+      <h2>舞台劇</h2>
+      <div id="stage" class="news-wrap"></div>
     </div>
-    <div class="item">
-      <a href="benNews/《全民造星3》香港「折骨舞王」Ben  由冇自信到成為冠軍改變我遇困難唔再逃避.html">《全民造星3》香港「折骨舞王」Ben  由冇自信到成為冠軍改變我遇困難唔再逃避</a>
+    <div>
+      <h2>造星後</h2>
+      <div id="after-kingmarker" class="news-wrap"></div>
     </div>
-    <div class="item">
-      <a href="benNews/【娛樂人物】Ben參演香港災難系列Part 2　梁祖堯喪屍腦交戰.html">【娛樂人物】Ben參演香港災難系列Part 2　梁祖堯喪屍腦交戰</a>
+    <div>
+      <h2>全民造星III</h2>
+      <div id="kingmarker" class="news-wrap"></div>
     </div>
-    <div class="item">
-      <a href="benNews/A組「媽媽」梁祖堯搵《造星III》Ben演舞台劇 三十強前已傾合作.html">A組「媽媽」梁祖堯搵《造星III》Ben演舞台劇 三十強前已傾合作</a>
+    <div>
+      <h2>囝囝女女730</h2>
+      <div id="youngster-show" class="news-wrap"></div>
     </div>
-    <div class="item">
-      <a href="benNews/志同道合邀演出.html">志同道合邀演出</a>
+    <div>
+      <h2>林二汶演唱會</h2>
+      <div id="lam2" class="news-wrap"></div>
     </div>
-    <div class="item">
-      <a href="benNews/舞台劇《通菜街喪屍戰》光速售罄 梁祖堯睇中Ben努力：正常行路都係練返嚟.html">舞台劇《通菜街喪屍戰》光速售罄 梁祖堯睇中Ben努力：正常行路都係練返嚟</a>
+    <div>
+      <h2>慈善畫展</h2>
+      <div id="exhibition" class="news-wrap"></div>
     </div>
-    <div class="item">
-      <a href="benNews/梁祖堯預見「香港災難」 有思想冇真我：比喪屍更喪屍.html">梁祖堯預見「香港災難」 有思想冇真我：比喪屍更喪屍</a>
-    </div>
-    <div class="item">
-      <a href="benNews/造星冠軍丨「軟骨Ben」趙祥誠拍廣告記錄舞者辛酸 被嘲耍雜技最難聽.html">造星冠軍丨「軟骨Ben」趙祥誠拍廣告記錄舞者辛酸 被嘲耍雜技最難聽</a>
-    </div>
-    <div class="item">
-      <a href="benNews/Ben嬲爆練舞被嘲似雜耍.html">Ben嬲爆練舞被嘲似雜耍</a>
-    </div>
-    <div class="item">
-      <a href="benNews/Ben Sir唔明《造星III》點解紅咗姜濤 折骨Ben：畀啲時間我.html">Ben Sir唔明《造星III》點解紅咗姜濤 折骨Ben：畀啲時間我</a>
-    </div>
-    <div class="item">
-      <a href="benNews/Ben Sir唔明點解紅咗姜B 折骨Ben：姜濤講我哋會成為亞洲第一，我信我係其中一個.html">Ben Sir唔明點解紅咗姜B 折骨Ben：姜濤講我哋會成為亞洲第一，我信我係其中一個</a>
-    </div>
-    <div class="item">
-      <a href="benNews/折骨舞王Ben《全民造星III》封王 大熱陳葦璇與ANSONBEAN同分屈居亞、季軍.html">折骨舞王Ben《全民造星III》封王 大熱陳葦璇與ANSONBEAN同分屈居亞、季軍</a>
-    </div>
-    <div class="item">
-      <a href="benNews/靠觀眾投票勝出　大熱Cloud三甲冇份　Ben爆冷奪《造星III》冠軍.html">靠觀眾投票勝出　大熱Cloud三甲冇份　Ben爆冷奪《造星III》冠軍</a>
-    </div>
-    <div class="item">
-      <a href="benNews/造星III總決賽丨ANSONBEAN被Ben傳染儍氣收埋記者錄音筆 陳葦璇大家姐照顧後輩.html">造星III總決賽丨ANSONBEAN被Ben傳染儍氣收埋記者錄音筆 陳葦璇大家姐照顧後輩</a>
-    </div>
-    <div class="item">
-      <a href="benNews/《全民造星3》冠軍折骨舞Ben是富家子 萬梓良世姪 住獨立屋有司機 畫家家姐曾選港姐.html">《全民造星3》冠軍折骨舞Ben是富家子 萬梓良世姪 住獨立屋有司機 畫家家姐曾選港姐</a>
-    </div>
-    <div class="item">
-      <a href="benNews/狗仔出更丨出爐《造星III》冠軍Ben住獨立屋 季軍ANSONBEAN居九肚山豪宅.html">狗仔出更丨出爐《造星III》冠軍Ben住獨立屋 季軍ANSONBEAN居九肚山豪宅</a>
-    </div>
-    <div class="item">
-      <a href="benNews/林二汶拖姜濤唱歌好得戚 組仔Ben折骨舞帶動氣氛.html">林二汶拖姜濤唱歌好得戚 組仔Ben折骨舞帶動氣氛</a>
-    </div>
-    <div class="item">
-      <a href="benNews/林二汶黑裙Look踏上紅館舞台 獻唱《再聚》悼故友盧凱彤.html">林二汶黑裙Look踏上紅館舞台 獻唱《再聚》悼故友盧凱彤</a>
-    </div>
-    <div class="item">
-      <a href="benNews/紅館尾場騷感謝明哥賞識 林二汶憶盧凱彤爆喊　「依然喺我隔籬」.html">紅館尾場騷感謝明哥賞識 林二汶憶盧凱彤爆喊　「依然喺我隔籬」</a>
-    </div>
-    <div class="item">
-      <a href="benNews/ViuTV食住《造星III》餘威推出《囝囝女女730》 硬撼大台《東張西望》.html">ViuTV食住《造星III》餘威推出《囝囝女女730》 硬撼大台《東張西望》</a>
-    </div>
-    <div class="item">
-      <a href="benNews/全民造星III丨ANSONBEAN 凌空接咪後再練新絕招 Mischa、陳葦璇苦練頑抗電眼.html">全民造星III丨ANSONBEAN 凌空接咪後再練新絕招 Mischa、陳葦璇苦練頑抗電眼</a>
-    </div>
-    <div class="item">
-      <a href="benNews/全民造星III丨十強互選冠軍阿Ben做「友誼先生」 Kimman坐亞甘願受折磨.html">全民造星III丨十強互選冠軍阿Ben做「友誼先生」 Kimman坐亞甘願受折磨</a>
-    </div>
-    <div class="item">
-      <a href="benNews/囝囝女女730丨Ben怕醜尷尬dead air 陳葦璇打圓場解圍.html">囝囝女女730丨Ben怕醜尷尬dead air 陳葦璇打圓場解圍</a>
-    </div>
-    <div class="item">
-      <a href="benNews/Alina透視舞衣洩春光.html">Alina透視舞衣洩春光</a>
-    </div>
-    <div class="item">
-      <a href="benNews/ANSONBEAN減壓爭冠軍.html">ANSONBEAN減壓爭冠軍 (造星十強訪問)</a>
-    </div>
-    <div class="item">
-      <a href="benNews/李佳芯恨同伴侶鴛鴦學書法 怨拍拖唔浪漫從冇共同興趣.html">李佳芯恨同伴侶鴛鴦學書法 怨拍拖唔浪漫從冇共同興趣</a>
-    </div>
-    <div class="item">
-      <a href="benNews/ViuTV五周年台慶丨杜琪峯講錯「Miller」 睇MIRROR演出大讚：香港創意工業有希望.html">ViuTV五周年台慶丨杜琪峯講錯「Miller」 睇MIRROR演出大讚：香港創意工業有希望</a>
-    </div>
-    <div class="item">
-      <a href="benNews/ViuTV五周年台慶大晒冷　MIRROR獲杜琪峯激讚　𢱑拍黑社會喜劇.html">ViuTV五周年台慶大晒冷　MIRROR獲杜琪峯激讚　𢱑拍黑社會喜劇</a>
-    </div>
-    <div class="item">
-      <a href="benNews/[家姐]城市畫家留住消逝輪廓「剛開始認識便已逐步消失」.html">[家姐]城市畫家留住消逝輪廓「剛開始認識便已逐步消失」</a>
-    </div>
+    <div>
+      <h2>家姐</h2>
+      <div id="sister" class="news-wrap"></div>
+    </div>                        
   </body>
 </html>
