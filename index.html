@@ -56,33 +56,33 @@
           {"title":"城市畫家留住消逝輪廓「剛開始認識便已逐步消失」","thumbnail":"T5FTJBSL3RHR3G52DN2CF4QX3E.jpg","video":false}
         ]
       };
-      console.log(newsData);
-      console.log(newsData["專訪"]);
+
+      var play = '<img class="play-logo" src="benNews/img/play-logo.png" />'
 
       $(document).ready(function(){
         newsData["專訪"].forEach(el => {
-          $("#interview").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img"><img src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
+          $("#interview").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img">' + (el.video? play : "") +  '<img class="box-thumbnail" src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
         });
         newsData["舞台劇"].forEach(el => {
-          $("#stage").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img"><img src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
+          $("#stage").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img">' + (el.video? play : "") +  '<img class="box-thumbnail" src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
         });
         newsData["造星後"].forEach(el => {
-          $("#after-kingmarker").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img"><img src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
+          $("#after-kingmarker").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img">' + (el.video? play : "") +  '<img class="box-thumbnail" src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
         });
         newsData["全民造星III"].forEach(el => {
-          $("#kingmarker").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img"><img src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
+          $("#kingmarker").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img">' + (el.video? play : "") +  '<img class="box-thumbnail" src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
         });
         newsData["囝囝女女730"].forEach(el => {
-          $("#youngster-show").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img"><img src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
+          $("#youngster-show").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img">' + (el.video? play : "") +  '<img class="box-thumbnail" src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
         });
         newsData["林二汶演唱會"].forEach(el => {
-          $("#lam2").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img"><img src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
+          $("#lam2").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img">' + (el.video? play : "") +  '<img class="box-thumbnail" src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
         });
         newsData["慈善畫展"].forEach(el => {
-          $("#exhibition").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img"><img src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
+          $("#exhibition").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img">' + (el.video? play : "") +  '<img class="box-thumbnail" src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
         });
         newsData["家姐"].forEach(el => {
-          $("#sister").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img"><img src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
+          $("#sister").append('<a href="benNews/' + el.title + '.html" class="news-box"><div class="box-img">' + (el.video? play : "") +  '<img class="box-thumbnail" src="benNews/thumbnail/' + el.thumbnail + '"/></div><div class="box-title">' + el.title + '</div></a>');
         });
       });
     </script>

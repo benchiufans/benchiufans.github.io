@@ -1,6 +1,7 @@
 body{
 	max-width: 1024px;
 	margin: auto;
+	background-color: #FEFEFE;
 }
 
 body > div, .index-title{
@@ -22,20 +23,34 @@ body > div, .index-title{
 
 .news-box{
 	width: 300px;
-    border: 2px solid black;
+    border: 2px solid #6a6a6a;
     border-radius: 5px;
     margin-right: 10px;
     margin-bottom: 10px;
     text-decoration: none;
 }
 
-.box-img > img{
+.box-img{
+	max-height: 168px;
+	position: relative;
+}
+
+.box-thumbnail{
 	width: 100%;
+	max-height: inherit;
+	object-fit: cover;
+}
+
+.play-logo{
+	position: absolute;
+	bottom: 5px;
+    right: 2px;
 }
 
 .box-title{
 	padding: 2px 10px;
 	color: #000;
+	font-size: 18px;
 }
 
 .news-wrap{
